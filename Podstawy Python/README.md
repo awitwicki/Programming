@@ -276,6 +276,10 @@ nazwa_obiektu.nazwa_funkcji()
 
 [Sklep smartfonów](https://github.com/awitwicki/Programming/blob/master/Podstawy%20Python/symulator_sklepu.py)
 
-### Ćwiczenie
+## Ćwiczenie
 
-Mamy klasę zdefiniowaną dla pojazdów –  `Pojazd`. Stwórz dwa nowe obiekty tej klasy:  `Auto1`  i  `Auto2`.  `Auto1`  powinno mieć kolor "czerwony", rodzaj "kabriolet", wartość 60000 i nazwę "Ferrari".  `Auto2`  powinien mieć kolor "niebieski", rodzaj "autobus", wartość 10000 i nazwę "Ikarus".
+### Sklep internetowy
+W klasie [Sklep](https://github.com/awitwicki/Programming/blob/master/Podstawy%20Python/symulator_sklepu.py) 
+
+- Wypiśz **najtańszy** i **najdroższy** smartfon znajdujący się w zmiennej `magazyn_smartfonow`
+- Dodaj metodę która oblicza **średnią** wartość smartfonów znajdujących się w zmiennej `magazyn_smartfonow` i wypisuje jej wartość
