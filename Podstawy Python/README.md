@@ -51,9 +51,10 @@ Definicja ciągu, wypełnionego jakimiś danymi:
 ```
 Po tej operacji w ciągu zmieni się tylko zerowy element i dane będą mieli taki wygląd: 
 
+```python
 	print(inny_ciag)
     >>[3, 2, 3]
-    ```
+```
 Żeby dodać element do ciągu trzeba użyć operator **.append()**
 ```python
 	inny_ciag.append(9)
@@ -86,69 +87,68 @@ Pętla `for` "przebiega" przez podany ciąg liczb, możemy ją zrealizować z u�
 
 
 ```python
-pierwsze = [2,3,5,7]
-for pierwsza in pierwsze:
-    print (pierwsza)
+	pierwsze = [2,3,5,7]
+	for pierwsza in pierwsze:
+	    print (pierwsza)
 
->>> 2 3 5 7
+	>>> 2 3 5 7
 ```
 
 Funkcja `range()` 
 ```python
-# Wypisze liczby 0 1 2 3 4
-for x in range(5):
-    print (x)
+	# Wypisze liczby 0 1 2 3 4
+	for x in range(5):
+	    print (x)
 
-
-# Wypisze 3 4 5
-for x in range(3,6):
-    print (x)
+	# Wypisze 3 4 5
+	for x in range(3,6):
+	    print (x)
 ```
 
 
 
 Pętla `while` wykonuje się dopóki pewien warunek logiczny jest spełniony. Przykład:
 ```python
-# Wypisze 0 1 2 3 4
+	# Wypisze 0 1 2 3 4
 
-licznik = 0
-while licznik < 5:
-    print (licznik),
-    licznik += 1  # Ma to taki sam efekt jak licznik = licznik + 1
+	licznik = 0
+	while licznik < 5:
+	    print (licznik),
+	    licznik += 1  # Ma to taki sam efekt jak licznik = licznik + 1
 ```
 
 ## Operatory logiczne
 Python posiada specjalny typ danych logicznych, który jest używany w instrukcjach warunkowych i pętlach. Wartości logiczne  `True`  albo  `False`  są najczęściej zwracane, kiedy porównujemy ze sobą dwie wartości.
 
 ```python
-x = 2
-print (x == 2) # wypisze True
-print (x != 2) # wypisze False
-print (x == 3) # wypisze False
-print (x < 3)  # wypisze True
+	x = 2
+	print (x == 2) # wypisze True
+	print (x != 2) # wypisze False
+	print (x == 3) # wypisze False
+	print (x < 3)  # wypisze True
 ```
 
 ### Operator `IF`
 Używamy operator `if` żeby program wypełniał się w zależności od warunków wejściowych/obliczonych
 ```python
-x = 2
-if x == 2:
-    print ("x wynosi dwa!")
-else:
-    print ("x jest rozne od dwoch.")
+	x = 2
+	if x == 2:
+	    print ("x wynosi dwa!")
+	else:
+	    print ("x jest rozne od dwoch.")
 ```
 Podany kod wypisze `x wynosi dwa!` ponieważ spełnia się warunek `x == 2` co równi się `True`.
 
 ### Operator `and` i `or` 
 Operatory logiczne `and` i `or` (pol. "i" i "lub") pozwalają na budowanie kompletnych zdań logicznych, na przykład:
 ```python
-imie = "Jan"
-wiek = 23
-if imie == "Jan" and wiek == 23:
-    print ("Nazywasz sie Jan i masz 23 lata.")
+	imie = "Jan"
+	wiek = 23
+	if imie == "Jan" and wiek == 23:
+	    print ("Nazywasz sie Jan i masz 23 lata.")
 
-if imie == "Jan" or imie == "Robert":
-    print ("Nazywasz sie Jan lub Robert")
+	if imie == "Jan" or imie == "Robert":
+	    print ("Nazywasz sie Jan lub Robert")
 ```
 
 ## Funkcje
@@ -164,18 +164,18 @@ naglowek_bloku:
 Najczęściej nagłówek bloku ma następującą budowę
 
 ```python
-slowo_koluczowe_bloku nazwa_bloku(argument1, argument2, ...)
+	slowo_koluczowe_bloku nazwa_bloku(argument1, argument2, ...)
 ```
 Funkcje są definiowane z użyciem słowa kluczowego `def`, po którym umieszcza się nazwę funkcji, a potem nawiasy. Jeżeli funkcja nie wymaga informacji z zewnątrz nawiasy pozostawiamy puste.
 ```python
-def przywitanie():
-    print ("Pozdrowienia z mojej funckji!")
+	def przywitanie():
+	    print ("Pozdrowienia z mojej funckji!")
 
-def przywitanie_imienne(imie, zyczenia):
-    print ("Witaj" + imie + ". Zycze Tobie " + zyczenia)
+	def przywitanie_imienne(imie, zyczenia):
+	    print ("Witaj" + imie + ". Zycze Tobie " + zyczenia)
 
-przywitanie() # Wypisze "Pozdrowienia z mojej funckji!"
-przywitanie_imienne("Jacek", "zdrowia") # Wypisze immienne zyczenia
+	przywitanie() # Wypisze "Pozdrowienia z mojej funckji!"
+	przywitanie_imienne("Jacek", "zdrowia") # Wypisze immienne zyczenia
 ```
 
 ### Jak wywoływać funkcje w Pythonie?
@@ -183,27 +183,27 @@ przywitanie_imienne("Jacek", "zdrowia") # Wypisze immienne zyczenia
 Po prostu napisz nazwę funkcji razem z argumentami w nawiasach, jak widać w przykładach poniżej:
 
 ```python
-def dzielenie(dzielna, dzielnik):
-    if(dzielnik == 0):
-        return # zakoncz funkcje nic nie zwracajac
-    else:
-        return dzielna / dzielnik
+	def dzielenie(dzielna, dzielnik):
+	    if(dzielnik == 0):
+	        return # zakoncz funkcje nic nie zwracajac
+	    else:
+	        return dzielna / dzielnik
 
-def przywitanie():
-    print ("Pozdrowienia z mojej funckji!")
+	def przywitanie():
+	    print ("Pozdrowienia z mojej funckji!")
 
-def przywitanie_imienne(imie, zyczenia):
-    print ("Witaj", imie, ". Zycze ci", zyczenia)
+	def przywitanie_imienne(imie, zyczenia):
+	    print ("Witaj", imie, ". Zycze ci", zyczenia)
 
-# brak argumentow i zwracanej wartosci
-przywitanie()
+	# brak argumentow i zwracanej wartosci
+	przywitanie()
 
-# brak zwracanej wartosci, ale sa juz argumenty
-przywitanie_imienne("Jacek", "zdrowia")
+	# brak zwracanej wartosci, ale sa juz argumenty
+	przywitanie_imienne("Jacek", "zdrowia")
 
-# jak przypisac zmiennej wartosc zwrocona przez funkcje
-x = dzielenie(9, 3)
-print (x)
+	# jak przypisac zmiennej wartosc zwrocona przez funkcje
+	x = dzielenie(9, 3)
+	print (x)
 ```
 
 
@@ -214,20 +214,19 @@ Obiety są połączeniem zmiennych i funkcji w jedną strukturalną całość. O
 Poniżej znajduje się bardzo prosty przykład klasy:
 
 ```python
- class MojaKlasa:
-      zmienna = "blah"
-      def funkcja(self):
-           print ("To jest wiadomość wewnątrz klasy.")
-
+	class MojaKlasa:
+		zmienna = "blah"
+		def funkcja(self):
+			print ("To jest wiadomość wewnątrz klasy.")
 ```
 
 Nieco później wyjaśnimy, dlaczego powinieneś dołączać "self" jako parametr. Aby stworzyć obiekt będący realizacją klasy wystarczy przypisać nazwie zmiennej wartość wyrażenia  `nazwa_klasy()`.
 
 ```python
-class MojaKlasa:
-    zmienna = "blah"
+	class MojaKlasa:
+	    zmienna = "blah"
 
-mojobiekt = MojaKlasa()
+	mojobiekt = MojaKlasa()
 
 ```
 Teraz zmienna "mojobiekt" przechowuje obiekt klasy  `MojaKlasa`, który zawiera zmienne i funkcje, które zostały zdefiniowane w środku klasy  `MojaKlasa`.
@@ -242,25 +241,25 @@ mojobiekt.zmienna
 Tak więc na przykład możesz wypisać napis "ple": class MojaKlasa: zmienna = "blah"
 
 ```python
-mojobiekt = MojaKlasa()
-mojobiekt.zmienna = "ple"
-print (mojobiekt.zmienna)
-# Wypisze ple
+	mojobiekt = MojaKlasa()
+	mojobiekt.zmienna = "ple"
+	print (mojobiekt.zmienna)
+	# Wypisze ple
 ```
 
 Możesz wielokrotnie tworzyć obiekty należące do tej samej klasy (mające te same zdefiniowane zmienne i funkcje). Jednakże, każdy obiekt zawiera niezależną kopię zmiennej zdefiniowane w klasie. Na przykład jeśli zdefiniujemy inny obiekt klasy  `MojaKlasa`  i zmienimy wspomnianą wyżej zmienną:
 
 ```python
-class MojaKlasa:
-    zmienna = "blah"
+	class MojaKlasa:
+	    zmienna = "blah"
 
-mojobiekt = MojaKlasa()
-mojobiekt.zmienna = "ple"
-mojobiekt2 = MojaKlasa()
-mojobiekt2.zmienna = "ploteczka"
+	mojobiekt = MojaKlasa()
+	mojobiekt.zmienna = "ple"
+	mojobiekt2 = MojaKlasa()
+	mojobiekt2.zmienna = "ploteczka"
 
-print (mojobiekt.zmienna) # ple
-print (mojobiekt2.zmienna) # ploteczka
+	print (mojobiekt.zmienna) # ple
+	print (mojobiekt2.zmienna) # ploteczka
 
 ```
 ### Dostęp do funkcji obiektu
