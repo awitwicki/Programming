@@ -1,6 +1,6 @@
 # Sieć neuronowa
 
-##Czym jest Sieć Neuronowa
+## Czym jest Sieć Neuronowa
 Opis na [Wikipedia](https://pl.wikipedia.org/wiki/Sie%C4%87_neuronowa)
 
 W tym zajęciu zrobmy najprostszy model sieci neuronowej, zrealizowany w technologii [TensorFlow](https://www.tensorflow.org).
