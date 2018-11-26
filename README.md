@@ -5,7 +5,6 @@ Cześć! Na tym kursie nauczymy Ciebie podstawam programowania w języku **Pytho
 Zajęcia:
 
  1. [Podstawy Python](https://github.com/awitwicki/Programming/tree/master/Podstawy%20Python)
- 2. [Computer Vision OpenCV](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
- 3. [Sieć neuronowa](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
- 4. [Telegram Api](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
- 5. [Końcowy projekt](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+ 2. [Sieći neuronowe](https://github.com/awitwicki/Programming/tree/master/Siec_neuronowa)
+ 3. [Telegram Api](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+ 4. [Końcowy projekt](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
