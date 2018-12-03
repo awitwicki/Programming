@@ -1,27 +1,8 @@
-from __future__ import print_function
-
 import tensorflow as tf
 import cv2
 import numpy as np
-from matplotlib import pyplot as plt
-
-import os
 
 def run(image_path):
-    imageSize = 28, 28
-
-    show_weights = True
-    show_training_weights = True
-    save_weight_images = False
-    show_plots = True
-    jpeg_image = True
-    random_images = True
-    save_trained_model = False
-
-    batch_size = 20  #  1..N
-    num_epochs = 10 #  1..N
-    step = 0.005     #  0..1
-
     X = tf.placeholder(tf.float32, [None, 784])
     W = tf.Variable(tf.zeros([784, 10]))
     b = tf.Variable(tf.zeros([10]))
@@ -33,25 +14,9 @@ def run(image_path):
     Y = tf.nn.softmax(tf.matmul(X, W) + b)
     Y_ = tf.placeholder(tf.float32, [None, 10])
 
-    cross_entropy = -tf.reduce_sum(Y_ * tf.log(Y))
-
-    is_correct = tf.equal(tf.arg_max(Y_, 1), tf.arg_max(Y, 1))
-    accuracy = tf.reduce_mean(tf.cast(is_correct, tf.float32))
-
-    optimizer = tf.train.GradientDescentOptimizer(step)
-    train_step = optimizer.minimize(cross_entropy)
-
     # init tensorflow variables
     sess = tf.Session()
     sess.run(init)
-
-    # lists to hold train accuracy and cross-entropy
-    acc_train_li = []
-    cross_train_li = []
-
-    # lists to hold test accuracy and cross-entropy
-    acc_test_li = []
-    cross_test_li = []
 
     saver = tf.train.Saver()
     # Restore model weights from previously saved model
