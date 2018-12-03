@@ -6,5 +6,5 @@ Zajęcia:
 
  1. [Podstawy Python](https://github.com/awitwicki/Programming/tree/master/Podstawy%20Python)
  2. [Sieći neuronowe](https://github.com/awitwicki/Programming/tree/master/Siec_neuronowa)
- 3. [Telegram Api](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
- 4. [Końcowy projekt](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+ 3. [Telegram Api](https://github.com/awitwicki/Programming/tree/master/Telegram_API)
+ 4. [Końcowy projekt](https://github.com/awitwicki/Programming/tree/master/Koncowy_Projekt)

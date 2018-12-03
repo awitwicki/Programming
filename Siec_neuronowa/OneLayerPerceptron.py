@@ -13,17 +13,17 @@ mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 
 imageSize = 28, 28
 
-show_weights = True
-show_training_weights = True
+show_weights = False
+show_training_weights = False
 save_weight_images = False
-show_plots = True
-jpeg_image = True
-random_images = True
-save_trained_model = False
+show_plots = False
+jpeg_image = False
+random_images = False
+save_trained_model = True
 
 batch_size = 20  #  1..N
-num_epochs = 10 #  1..N
-step = 0.005     #  0..1
+num_epochs = 1000 #  1..N
+step = 0.001     #  0..1
 
 X = tf.placeholder(tf.float32, [None, 784])
 W = tf.Variable(tf.zeros([784, 10]))
@@ -44,7 +44,7 @@ accuracy = tf.reduce_mean(tf.cast(is_correct, tf.float32))
 optimizer = tf.train.GradientDescentOptimizer(step)
 train_step = optimizer.minimize(cross_entropy)
 
-    
+
 # init tensorflow variables
 sess = tf.Session()
 sess.run(init)
@@ -77,7 +77,7 @@ for i in range(num_epochs):
             if not os.path.exists(directory):
                 os.makedirs(directory)
             cv2.imwrite((directory + "{0}.jpg").format(i), img_weight)   
-        
+
         cv2.waitKey(30);
 
     # load batch of images and correct answer
@@ -109,12 +109,16 @@ print('Test Set Accuracy: '+str(acc_test_li[-1])+ '\t Test Set cross-entropy Los
 if save_trained_model is True:
     print("Saving OLP model.")
     saver = tf.train.Saver()
-    directory = "model/"
+    directory = "model/olp_model.ckpt"
 
     if not os.path.exists(directory):
         os.makedirs(directory)
 
-    saver.save(sess, directory + "model")
+    # Save model weights to disk
+    save_path = saver.save(sess, directory)
+    print("Model saved in file: %s" % save_path)
+
+    print("saved model: %s" % save_path)
 
 #show Accuracy and cross entropy
 if show_plots:
@@ -131,7 +135,6 @@ if show_plots:
 
 #show weights as images
 if show_weights:
-    
     for i in range(10):
         plt.subplot(3, 4, i+1)
         weight = sess.run(W)[:,i]
@@ -140,8 +143,7 @@ if show_weights:
         frame1 = plt.gca()
 
     plt.show()
-   
-   
+
 #Run on test image  
 if jpeg_image:
     cv2_image = 'img/examples/3.jpg' #  (0,1,3,5,9).jpg
@@ -159,7 +161,7 @@ if jpeg_image:
 
     #prediction
     classification = sess.run(tf.argmax(predict, 1), feed_dict={X: [_image]})
-   
+
     #show image and predicted label
     plt.title("Predicted class:"+ str(classification[0]))
 
@@ -186,6 +188,5 @@ if random_images:
         plt.title(predicted_class)
         plt.imshow(image)
         frame1 = plt.gca()
-        
 
     plt.show()

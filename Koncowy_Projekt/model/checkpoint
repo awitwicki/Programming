@@ -1,0 +1,2 @@
+model_checkpoint_path: "olp_model.ckpt"
+all_model_checkpoint_paths: "olp_model.ckpt"
