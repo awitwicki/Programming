@@ -7,8 +7,6 @@ from matplotlib import pyplot as plt
 
 import os
 
-zmienna = "lalala"
-
 def run(image_path):
     imageSize = 28, 28
 
@@ -79,5 +77,3 @@ def run(image_path):
     classification = sess.run(tf.argmax(predict, 1), feed_dict={X: [_image]})
 
     return [data_p, classification]
-
-r,d = run('img/photo.jpg')
